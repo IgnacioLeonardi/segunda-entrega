@@ -5,17 +5,27 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Gothic A1', sans-serif!important;
+    font-family: 'Gothic A1', sans-serif !important;
 }
-
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer{
+    margin-top: auto;
+}
 /* Titulos */
 h1 {
     text-align: center;
     background-color: #009fe3;
     font-size: 50px;
-    font-weight: bold;   
+    font-weight: bold;
+    width: 100%;
 }
-.grid-index {  display: grid;
+
+.grid-index {
+    display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 1fr;
     gap: 0px 0px;
@@ -23,21 +33,32 @@ h1 {
     justify-content: space-between;
     align-items: center;
     grid-template-areas:
-      "seccion1 seccion2 seccion3";
-  }
-  
-  .seccion2 { grid-area: seccion2; }
-  
-  .seccion1 { grid-area: seccion1; }
-  
-  .seccion3 { grid-area: seccion3; }
-.seccion1, .seccion2, .seccion3{
+        "seccion1 seccion2 seccion3";
+}
+
+.seccion2 {
+    grid-area: seccion2;
+}
+
+.seccion1 {
+    grid-area: seccion1;
+}
+
+.seccion3 {
+    grid-area: seccion3;
+}
+
+.seccion1,
+.seccion2,
+.seccion3 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 
-}  
-p, h3 {
+}
+
+p,
+h3 {
     text-align: center
 }
 
@@ -45,6 +66,7 @@ p, h3 {
 #main-index img {
     width: 100%;
 }
+
 #main-index section {
     text-align: center;
 }
@@ -69,23 +91,52 @@ p, h3 {
     width: 100%;
 }
 
-.article-flex-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+.grid-footer {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "redes datos ubicacion";
 }
 
-.div-flex-footer {
+.redes {
+    grid-area: redes;
+}
+
+.datos {
+    grid-area: datos;
+}
+
+.ubicacion {
+    grid-area: ubicacion;
+}
+
+.redes {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ubicacion {
+    display: flex;
+    justify-content: center;
 }
 
 /* Quienes somos */
 .quienes-somos-flex {
     display: flex;
     align-items: center;
-    width: 1903px;
+    width: 100%;
     justify-content: center;
     padding: 30px;
 }
@@ -167,8 +218,50 @@ p, h3 {
 .separacion-imput {
     margin: 5px;
 }
-@media (max-width: 450px){
-    .grid-index {  display: grid;
+
+@media (max-width: 1024px) {
+    #main-contacto img {
+        width: 200px;
+    }
+
+    .form-contacto {
+        width: 300px;
+        padding: 3px;
+    }
+}
+@media (max-width: 768px){
+    .datos{
+        font-size: 15px;
+    }
+}
+@media (max-width: 700px) {
+    .grid-footer {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "redes"
+            "datos"
+            "ubicacion";
+    }
+    .redes{
+        flex-direction: row;
+        padding: 10px;
+    }
+    #main-contacto img {
+        display: none;
+    }
+
+    h1 {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 450px) {
+    .grid-index {
+        display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 1fr;
         gap: 0px 0px;
@@ -176,11 +269,28 @@ p, h3 {
         justify-content: space-between;
         align-items: center;
         grid-template-areas:
-          "seccion1"
-          "seccion2" 
-          "seccion3"
-        }
-    h1{
-        font-size: 30px
+            "seccion1"
+            "seccion2"
+            "seccion3"
+    }
+
+    .grid-footer {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "redes"
+            "datos"
+            "ubicacion";
+    }
+    .redes{
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 25px
     }
 }
