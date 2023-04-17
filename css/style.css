@@ -82,7 +82,7 @@ h3 {
     align-items: center;
     width: 100%;
     justify-content: center;
-    padding: 30px;
+
 }
 
 .quienes-somos-flex img {
@@ -91,12 +91,14 @@ h3 {
 }
 
 .quienes-somos-flex p {
+    padding: 30px;
     width: 350px;
+    text-align: justify;
 }
 
 /* Productos */
 #main-productos img {
-    width: 1903px;
+    width: 100%;
 }
 
 #main-productos section img {
@@ -272,6 +274,18 @@ h3 {
 }
 
 @media (max-width: 700px) {
+    .quienes-somos-flex{
+        flex-direction: column;
+    }
+    .quienes-somos-flex p{
+        padding: 0;
+        width: 320px;
+        text-align: justify;
+    }
+    .quienes-somos-flex img{
+        padding: 0;
+        width: 350px;
+    }
     .grid-footer {
         display: grid;
         grid-template-columns: 100%;
@@ -335,5 +349,20 @@ h3 {
 
     h1 {
         font-size: 25px
+    }
+}
+@media (max-width: 375px){
+    .quienes-somos-flex{
+        flex-direction: column;
+    }
+    .quienes-somos-flex p{
+        padding-top: 10px;
+        width: 300px;
+        text-align: justify;
+    }
+    .quienes-somos-flex img{
+        padding: 0;
+        width: 300px;
+        height: 300px;
     }
 }
