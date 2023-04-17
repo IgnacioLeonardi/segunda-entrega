@@ -7,14 +7,17 @@
     padding: 0;
     font-family: 'Gothic A1', sans-serif !important;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-footer{
+
+footer {
     margin-top: auto;
 }
+
 /* Titulos */
 h1 {
     text-align: center;
@@ -23,6 +26,7 @@ h1 {
     font-weight: bold;
     width: 100%;
 }
+
 /* Configuracion del index */
 .grid-index {
     display: grid;
@@ -56,12 +60,11 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
 }
-.seccion2 img{
-    padding-bottom: 1px;
-}
-p{
+
+p {
     text-align: center;
 }
+
 h3 {
     text-align: center;
     font-size: 30px;
@@ -71,6 +74,119 @@ h3 {
 /* Banner index */
 #main-index img {
     width: 100%;
+}
+
+/* Quienes somos */
+.quienes-somos-flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding: 30px;
+}
+
+.quienes-somos-flex img {
+    height: 350px;
+    padding: 30px;
+}
+
+.quienes-somos-flex p {
+    width: 350px;
+}
+
+/* Productos */
+#main-productos img {
+    width: 1903px;
+}
+
+#main-productos section img {
+    width: 400px;
+}
+
+.article-flex-main-productos {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Cursos */
+.banner {
+    width: 100%
+}
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "sec1 sec2 sec3 sec4";
+    justify-content: space-between;
+    align-items: baseline;
+    justify-items: stretch;
+}
+
+.sec1 {
+    grid-area: sec1;
+}
+
+.sec2 {
+    grid-area: sec2;
+}
+
+.sec3 {
+    grid-area: sec3;
+}
+
+.sec4 {
+    grid-area: sec4;
+}
+
+.sec1,
+.sec2,
+.sec3,
+.sec4 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contacto */
+#main-contacto img {
+    width: 300px;
+    padding: 5px;
+}
+
+.div-contacto {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-contacto {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    background-color: #009fe3;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.form-contacto p {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.separacion-imput {
+    margin: 5px;
+}
+
+.separacion-imput:focus {
+    background-color: rgb(242, 255, 65);
 }
 
 /* Footer */
@@ -121,94 +237,6 @@ h3 {
     justify-content: center;
 }
 
-/* Quienes somos */
-.quienes-somos-flex {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    padding: 30px;
-}
-
-.quienes-somos-flex img {
-    height: 350px;
-    padding: 30px;
-}
-
-.quienes-somos-flex p {
-    width: 350px;
-}
-
-/* Productos */
-#main-productos img {
-    width: 1903px;
-}
-
-#main-productos section img {
-    width: 400px;
-}
-
-.article-flex-main-productos {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    padding: 30px;
-    text-align: center;
-}
-
-/* Cursos */
-#main-cursos img {
-    width: 1903px;
-}
-
-#main-cursos section img {
-    width: 400px;
-}
-
-.article-flex-main-cursos {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    padding: 30px;
-    text-align: center;
-    align-items: flex-end;
-}
-
-/* Contacto */
-#main-contacto img {
-    width: 300px;
-    padding: 5px;
-}
-
-.div-contacto {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.form-contacto {
-    display: flex;
-    text-align: center;
-    padding: 20px;
-    background-color: #009fe3;
-    border-radius: 10px;
-    flex-direction: column;
-}
-
-.form-contacto p {
-    padding: 20px;
-    font-weight: bold;
-}
-
-.separacion-imput {
-    margin: 5px;
-}
-.separacion-imput:focus{
-    background-color: rgb(242, 255, 65);
-}
 @media (max-width: 1024px) {
     #main-contacto img {
         width: 200px;
@@ -219,14 +247,30 @@ h3 {
         padding: 3px;
     }
 }
-@media (max-width: 768px){
-    .datos{
+
+@media (max-width: 768px) {
+    .grid-cursos {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "sec1 sec2"
+            "sec3 sec4";
+        justify-content: space-between;
+        align-items: baseline;
+        justify-items: stretch;
+    }
+    .datos {
         font-size: 15px;
     }
-    h3{
+
+    h3 {
         font-size: 20px;
     }
 }
+
 @media (max-width: 700px) {
     .grid-footer {
         display: grid;
@@ -239,10 +283,12 @@ h3 {
             "datos"
             "ubicacion";
     }
-    .redes{
+
+    .redes {
         flex-direction: row;
         padding: 10px;
     }
+
     #main-contacto img {
         display: none;
     }
@@ -253,6 +299,21 @@ h3 {
 }
 
 @media (max-width: 450px) {
+    .grid-cursos {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "sec1"
+            "sec2"
+            "sec3"
+            "sec4";
+        justify-content: space-between;
+        align-items: baseline;
+        justify-items: stretch;
+    }
     .grid-index {
         display: grid;
         grid-template-columns: 100%;
@@ -266,7 +327,8 @@ h3 {
             "seccion2"
             "seccion3"
     }
-    .redes{
+
+    .redes {
         flex-direction: row;
         padding: 10px;
     }
