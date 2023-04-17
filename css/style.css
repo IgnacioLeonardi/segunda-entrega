@@ -23,7 +23,7 @@ h1 {
     font-weight: bold;
     width: 100%;
 }
-
+/* Configuracion del index */
 .grid-index {
     display: grid;
     grid-template-columns: 30% 30% 30%;
@@ -31,7 +31,7 @@ h1 {
     gap: 0px 0px;
     grid-auto-flow: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     grid-template-areas:
         "seccion1 seccion2 seccion3";
 }
@@ -52,36 +52,25 @@ h1 {
 .seccion2,
 .seccion3 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-
+    justify-content: flex-start;
 }
-
-p,
+.seccion2 img{
+    padding-bottom: 1px;
+}
+p{
+    text-align: center;
+}
 h3 {
-    text-align: center
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 /* Banner index */
 #main-index img {
     width: 100%;
-}
-
-#main-index section {
-    text-align: center;
-}
-
-#main-index h3 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.article-flex-main-index {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    padding: 30px;
 }
 
 /* Footer */
@@ -198,7 +187,6 @@ h3 {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    font-family: 'Gothic A1', sans-serif;
 }
 
 .form-contacto {
@@ -218,7 +206,9 @@ h3 {
 .separacion-imput {
     margin: 5px;
 }
-
+.separacion-imput:focus{
+    background-color: rgb(242, 255, 65);
+}
 @media (max-width: 1024px) {
     #main-contacto img {
         width: 200px;
@@ -232,6 +222,9 @@ h3 {
 @media (max-width: 768px){
     .datos{
         font-size: 15px;
+    }
+    h3{
+        font-size: 20px;
     }
 }
 @media (max-width: 700px) {
@@ -272,18 +265,6 @@ h3 {
             "seccion1"
             "seccion2"
             "seccion3"
-    }
-
-    .grid-footer {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            "redes"
-            "datos"
-            "ubicacion";
     }
     .redes{
         flex-direction: row;
